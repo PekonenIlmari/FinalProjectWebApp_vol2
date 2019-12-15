@@ -159,6 +159,8 @@ router.post(
         message: "You can now log in"
       });*/
       res.redirect("/welcome");
+    } else {
+      res.redirect("/welcome");
     }
   }
 );
