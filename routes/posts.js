@@ -75,8 +75,24 @@ router.post(
     var minute = date.getMinutes();
     var second = date.getSeconds();
 
-    if (hour === 24) {
-      hour = 0;
+    var tunti = String(hour);
+
+    if (hour === "24") {
+      hour = "00";
+    }
+    if (hour === "25") {
+      hour = "01";
+    }
+    var minuutti = String(minute);
+
+    if (minuutti.length === 1) {
+      minute = "0" + minuutti;
+    }
+
+    var sekuntti = String(second);
+
+    if (sekuntti.length === 1) {
+      second = "0" + sekuntti;
     }
 
     var time = hour + ":" + minute + ":" + second;
