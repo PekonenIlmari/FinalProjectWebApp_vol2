@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    link(rel='stylesheet', href='style_index.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+
+  body
+    h1= title
+    p Welcome to #{title}, please login or sign up to proceed
+    p#check= message
+
+    .container.grey.lighten-5.hoverable
+      .row
+        h3 Log In
+        form(method="POST" action="/posts/login")
+          .form-group.col.s10.offset-s1
+            label(for='username') Username
+            input#name.form-control(type='text' placeholder='Enter username here' name='loginuser')
+          .form-group.col.s10.offset-s1
+            label(for='pwd') Password
+            input#password.form-control(type='password' placeholder='Enter password here' name='loginpassword')
+          button.btn.waves-effect.waves-light(type='submit') Log In
+      p
+      .row
+        h3 Sign Up
+        form(method="POST" action="/posts/signup")
+          .form-group.col.s10.offset-s1
+            label(for='username') Username
+            input#name.form-control(type='text' placeholder='Enter username here' name='signupuser')
+          .form-group.col.s10.offset-s1
+            label(for='pwd') Password
+            input#password.form-control(type='password' placeholder='Enter password here' name='signuppassword')
+          button.btn.waves-effect.waves-light(type='submit') Sign Up
+      p
+      br
+    br
+    p © Ilmari Pekonen, 2019
+      
+    

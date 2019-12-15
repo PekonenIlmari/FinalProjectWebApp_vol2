@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    link(rel='stylesheet', href='style_posts.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+
+  body
+    .row.cyan.lighten-4
+      h1= title
+      p Welcome to my microblogging service, here you can read and post your own content.
+      form(method="POST" action="/getin")
+        button.btn.waves-effect.waves-light(type='submit' name='action') Login
+      br
+        
+
+    .row
+      .col.s1.m1.l1
+      .col.s3.m3.l3.grey.lighten-5.hoverable
+        h3 Welcome to Twitter 2.0. 
+        p This is a microblogging service that you can use freely. Right now you can only see the posts but if you log in you will be able to post content with or your login name or with a nickname.
+      .col.s1.m1.l1
+      .col.s6.m6.l6.brown.lighten-1.hoverable
+        ul
+        each post in post_list.reverse()
+          p.left-align #{post.username} - #{post.postContent} - #{post.time}
+
+        else
+          p There are no posts yet, be the first one to post something!
+    br
+    p © Ilmari Pekonen, 2019
