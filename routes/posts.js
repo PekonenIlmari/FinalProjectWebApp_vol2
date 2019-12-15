@@ -122,10 +122,11 @@ router.post(
       }
 
       if (found === 0) {
-        res.render("index", {
+        /*res.render("index", {
           title: "Twitter 2.0",
           message: "Please check your credentials."
-        });
+        });*/
+        res.redirect("/welcome");
       } else {
         res.redirect("/posts");
         console.log(local_user + " logged in");
@@ -153,10 +154,11 @@ router.post(
         if (err) throw err;
         console.log("New user added to database.");
       });
-      res.render("index", {
+      /*res.render("index", {
         title: "Twitter 2.0",
         message: "You can now log in"
-      });
+      });*/
+      res.redirect("/welcome");
     }
   }
 );
