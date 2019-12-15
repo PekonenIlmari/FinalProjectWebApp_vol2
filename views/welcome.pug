@@ -22,14 +22,14 @@ html
         
 
     .row
-      .col.s1.m1.l1
-      .col.s3.m3.l3.grey.lighten-5.hoverable
+      .col.s0.m0.l1
+      .col.s12.m12.l3.xl3.grey.lighten-5.hoverable
         h3 Welcome to Twitter 2.0
         p This is a microblogging service that you can use freely. Right now you can only see the posts but if you log in, you will be able to post content with your login name or with a nickname.
-      .col.s1.m1.l1
+      .col.s12.m12.l1
         form(method='POST' action='/')
           button.btn.waves-effect.waves-light(type='submit' name='refresh') Refresh feed
-      .col.s6.m6.l6.brown.lighten-1.hoverable
+      .col.s12.m12.l6.xl6.brown.lighten-1.hoverable
         ul
         each post in post_list.reverse()
           p.left-align #{post.username} - #{post.postContent} - #{post.time}
