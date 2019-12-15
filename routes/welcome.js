@@ -24,14 +24,6 @@ mongoose.connection
     console.log("There's an error", error);
   });
 
-/*var postSchema = new mongoose.Schema({
-  username: String,
-  postContent: String,
-  time: String
-});
-
-var posting = mongoose.model("Posti", postSchema);*/
-
 router.get("/", function(req, res, next) {
   posting.find({}, function(err, data) {
     if (err) throw err;
@@ -45,6 +37,17 @@ router.get("/", function(req, res, next) {
 
 router.post("/getin", function(req, res, next) {
   res.redirect("/welcome");
+});
+
+router.post("/", function(req, res, next) {
+  posting.find({}, function(err, data) {
+    if (err) throw err;
+
+    res.render("welcome", {
+      title: "Twitter 2.0",
+      post_list: data
+    });
+  });
 });
 
 module.exports = router;

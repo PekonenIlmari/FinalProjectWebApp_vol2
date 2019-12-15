@@ -27,20 +27,6 @@ mongoose.connection
     console.log("There's an error", error);
   });
 
-/*var postSchema = new mongoose.Schema({
-  username: String,
-  postContent: String,
-  time: String
-});
-
-var userSchema = new mongoose.Schema({
-  username: String,
-  password: String
-});
-
-var posting = mongoose.model("Post", postSchema);
-var user = mongoose.model("User", userSchema);*/
-
 router.get("/", function(req, res, next) {
   posting.find({}, function(err, data) {
     if (err) throw err;
