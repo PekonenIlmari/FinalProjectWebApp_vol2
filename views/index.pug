@@ -7,17 +7,18 @@ html
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
     link(rel='stylesheet', href='/style_index.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+
     style
       include ../public/style_index.css
 
   body
     h1= title
     p Welcome to #{title}, please login or sign up to proceed
-    p#check= message
 
     .container.grey.lighten-5.hoverable
       .row
         h3 Log In
+        p#check= message
         form(method="POST" action="/posts/login")
           .form-group.col.s10.offset-s1
             label(for='username') Username

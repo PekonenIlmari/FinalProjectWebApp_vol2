@@ -7,10 +7,12 @@ html
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
     link(rel='stylesheet', href='/style_posts.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+
     style
       include ../public/style_posts.css
 
   body
+    div(style='background-image:url(#{require("../public/backgorund.png")})')
     .row.cyan.lighten-4
       h1= title
       p World's best microblogging service!

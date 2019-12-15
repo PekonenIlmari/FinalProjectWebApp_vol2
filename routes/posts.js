@@ -63,10 +63,10 @@ router.post(
 
     var tunti = String(hour);
 
-    if (hour === "24") {
+    if (tunti === "24") {
       hour = "00";
     }
-    if (hour === "25") {
+    if (tunti === "25") {
       hour = "01";
     }
     var minuutti = String(minute);
