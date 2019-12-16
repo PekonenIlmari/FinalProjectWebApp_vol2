@@ -81,20 +81,24 @@ router.post(
 
     var time = hour + ":" + minute + ":" + second;
 
-    if (local_content && local_author !== "") {
-      console.log("We got content: " + local_content);
-      console.log("from author: " + local_author);
-      var posting1 = posting({
-        username: local_author,
-        postContent: local_content,
-        time: time
-      }).save(function(err) {
-        if (err) throw err;
-        console.log("post added!");
-      });
-      res.redirect("/posts");
-    } else {
-      res.redirect("/posts");
+    var content = String(local_content);
+
+    if (content.length < 140) {
+      if (local_content && local_author !== "") {
+        console.log("We got content: " + local_content);
+        console.log("from author: " + local_author);
+        var posting1 = posting({
+          username: local_author,
+          postContent: local_content,
+          time: time
+        }).save(function(err) {
+          if (err) throw err;
+          console.log("post added!");
+        });
+        res.redirect("/posts");
+      } else {
+        res.redirect("/posts");
+      }
     }
   }
 );
