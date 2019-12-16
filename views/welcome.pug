@@ -27,10 +27,10 @@ html
         h3 Welcome to Twitter 2.0
         p This is a microblogging service that you can use freely. Right now you can only see the posts but if you log in, you will be able to post content with your login name or with a nickname.
       .col.s12.m12.l1
+        br
         form(method='POST' action='/')
           button.btn.waves-effect.waves-light(type='submit' name='refresh') Refresh feed
-          br
-          br
+        br
       .col.s12.m12.l6.xl6.brown.lighten-1.hoverable
         ul
         each post in post_list.reverse()
