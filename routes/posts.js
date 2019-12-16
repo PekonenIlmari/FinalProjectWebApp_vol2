@@ -154,10 +154,6 @@ router.post(
         if (err) throw err;
         console.log("New user added to database.");
       });
-      /*res.render("index", {
-        title: "Twitter 2.0",
-        message: "You can now log in"
-      });*/
       res.redirect("/welcome");
     } else {
       console.log("Not all the fields were filled.");
