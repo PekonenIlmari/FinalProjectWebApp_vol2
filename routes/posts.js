@@ -36,8 +36,6 @@ router.get("/", function(req, res, next) {
   });
 });
 
-function nothing() {}
-
 router.post(
   "/create",
   sanitizeBody("*")
