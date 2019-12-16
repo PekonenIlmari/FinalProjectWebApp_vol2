@@ -36,9 +36,8 @@ router.get("/", function(req, res, next) {
   });
 });
 
-// Sanitation middleware
-// See https://express-validator.github.io/docs/sanitization-chain-api.html
-// And https://express-validator.github.io/docs/filter-api.html
+function nothing() {}
+
 router.post(
   "/create",
   sanitizeBody("*")
@@ -99,6 +98,8 @@ router.post(
       } else {
         res.redirect("/posts");
       }
+    } else {
+      res.redirect("/posts");
     }
   }
 );
