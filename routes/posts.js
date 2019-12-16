@@ -1,7 +1,6 @@
 // Required libraries
 var express = require("express");
 var router = express.Router();
-var MongoClient = require("mongodb").MongoClient;
 var sessionstorage = require("sessionstorage");
 var posting = require("../models/post");
 var user = require("../models/user");
@@ -10,7 +9,6 @@ var user = require("../models/user");
 const { sanitizeBody } = require("express-validator");
 
 const mongoose = require("mongoose");
-//mongoose.Promise = global.Promise;
 
 var dbUrl =
   "mongodb+srv://dbAdmin:koira123@webapplications-r6ana.mongodb.net/test?retryWrites=true&w=majority";
@@ -122,10 +120,7 @@ router.post(
       }
 
       if (found === 0) {
-        /*res.render("index", {
-          title: "Twitter 2.0",
-          message: "Please check your credentials."
-        });*/
+        console.log("User not found or wrong credentials.");
         res.redirect("/welcome");
       } else {
         res.redirect("/posts");
@@ -146,7 +141,7 @@ router.post(
     var local_password = req.body.signuppassword;
 
     if (local_user && local_password !== "") {
-      console.log("New user: " + local_user + "signed up.");
+      console.log("New user: " + local_user + " signed up.");
       var user1 = user({
         username: local_user,
         password: local_password
@@ -160,6 +155,7 @@ router.post(
       });*/
       res.redirect("/welcome");
     } else {
+      console.log("Not all the fields were filled.");
       res.redirect("/welcome");
     }
   }

@@ -1,13 +1,10 @@
 var express = require("express");
 var router = express.Router();
-var MongoClient = require("mongodb").MongoClient;
 var posting = require("../models/post");
 
 // Good validation documentation available at https://express-validator.github.io/docs/
-const { sanitizeBody } = require("express-validator");
 
 const mongoose = require("mongoose");
-//mongoose.Promise = global.Promise;
 
 var dbUrl =
   "mongodb+srv://dbAdmin:koira123@webapplications-r6ana.mongodb.net/test?retryWrites=true&w=majority";
