@@ -11,7 +11,7 @@ const { sanitizeBody } = require("express-validator");
 const mongoose = require("mongoose");
 
 var dbUrl =
-  "mongodb+srv://dbAdmin:koira123@webapplications-r6ana.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://{username}:{password}@webapplications-r6ana.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose
   .connect(dbUrl, { useNewUrlParser: true })
